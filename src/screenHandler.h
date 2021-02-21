@@ -12,26 +12,28 @@ enum priority {
     FOREGROUND = 4
 };
 
+struct FutureState
+{
+    int x;
+    int y;
+    bool flip;
+    double angle;
+    int centerX;
+    int centerY;
+    int clipX;
+    int clipY;
+    int clipWidth;
+    int clipHeight;
+};
+
 class ScreenHandler
 {
 private:
-    struct FutureState
-    {
-        int x;
-        int y;
-        bool flip;
-        double angle;
-        int centerX;
-        int centerY;
-        int clipX;
-        int clipY;
-        int clipWidth;
-        int clipHeight;
-    };
-    std::unordered_map<std::string, FutureState>* futures;
+    std::unordered_map<std::string, FutureState> futures;
 protected:
-    void createFutureState(std::string tID, int x, int y, bool flip, double angle, int centerX, int centerY, int clipX, int clipY, int clipWidth, int clipHeight);
-    FutureState* getFutureState(std::string tID);
+    void setFutureState(std::string tID, int x, int y, bool flip, double angle, int centerX, int centerY, int clipX, int clipY, int clipWidth, int clipHeight);
+    void setFutureState(std::string tID, FutureState state);
+    FutureState getFutureState(std::string tID);
 public:
     ScreenHandler();
     ~ScreenHandler();
