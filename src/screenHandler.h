@@ -33,6 +33,7 @@ private:
 protected:
     void setFutureState(std::string tID, int x, int y, bool flip, double angle, int centerX, int centerY, int clipX, int clipY, int clipWidth, int clipHeight);
     void setFutureState(std::string tID, FutureState state);
+    void removeFutureState(std::string tID);
     FutureState getFutureState(std::string tID);
 public:
     ScreenHandler();

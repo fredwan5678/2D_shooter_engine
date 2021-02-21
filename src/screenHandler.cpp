@@ -12,3 +12,6 @@ void ScreenHandler::setFutureState(std::string tID, FutureState state) {
 FutureState ScreenHandler::getFutureState(std::string tID) {
     return futures.at(tID);
 }
+void ScreenHandler::removeFutureState(std::string tID) {
+    futures.erase(tID);
+}

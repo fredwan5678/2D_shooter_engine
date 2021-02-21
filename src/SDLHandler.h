@@ -9,6 +9,7 @@ class SDLHandler : public ScreenHandler
 {
 private:
     SDL_Renderer* renderer;
+    
 public:
     SDLHandler(/* args */);
     ~SDLHandler();
