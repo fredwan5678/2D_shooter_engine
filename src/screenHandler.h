@@ -1,5 +1,5 @@
-#ifndef GAME_LOOP_H
-#define GAME_LOOP_H
+#ifndef SCREEN_HANDLER_H
+#define SCREEN_HANDLER_H
 
 #include <string>
 #include <unordered_map>
@@ -48,7 +48,7 @@ public:
 
     virtual void clipSprite(std::string tID, int clipX, int clipY, int clipWidth, int clipHeight);
 
-    virtual void renderSprite(std::string tID, int x, int y, bool flip = false, double angle = 0.0, int centerX = 0, int centerY = 0);
+    virtual void moveSprite(std::string tID, int x, int y, bool flip = false, double angle = 0.0, int centerX = 0, int centerY = 0);
 
     virtual void setRenderPriority(priority priority);
 };
