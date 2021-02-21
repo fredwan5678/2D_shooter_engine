@@ -14,7 +14,7 @@ private:
     double interpolation = 0;
 
 protected:
-    *Logger logger;
+    Logger* logger;
     bool runningState;
     GameEngine controller;
 
@@ -23,12 +23,12 @@ protected:
     void ProcessGameLoop();
 
 public:
-    GameState(GameEngine engine);
-    ~GameState();
+    GameLoop(GameEngine engine);
+    ~GameLoop();
 
     void Run();
     void Stop();
     bool IsRunning();
-}
+};
 
 #endif

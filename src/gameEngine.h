@@ -7,7 +7,7 @@
 class GameEngine
 {
 private:
-    vector<CGameState*> states;
+    std::vector<GameState*> states;
     bool running;
 
 public:
