@@ -57,7 +57,7 @@ public:
 
     virtual void setRenderPriority(std::string tID, priority prio);
 
-    virtual std::vector<std::string> getKeysPressed();
+    virtual std::unordered_set<std::string> getKeysPressed();
 
     virtual std::pair<int, int> getMousePos();
 };
