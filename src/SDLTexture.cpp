@@ -1,11 +1,18 @@
 #include "SDLTexture.h"
 
-SDLTexture::SDLTexture(SDL_Renderer* renderer, std::string path) {
+SDLTexture::SDLTexture(std::string tID, SDL_Renderer* renderer, std::string path, int width, int height) {
     loadFromPNG(renderer, path);
+    this->tID = tID;
+	this->width = width;
+	this->height = height;
 }
 
 SDLTexture::~SDLTexture() {
-    if(texture != NULL)
+    free();
+}
+
+void SDLTexture::free() {
+	if(texture != NULL)
 	{
 		SDL_DestroyTexture(texture);
 		texture = NULL;

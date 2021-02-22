@@ -9,8 +9,10 @@
 class SDLTexture
 {
 public:
-    SDLTexture(SDL_Renderer* renderer, std::string path);
+    SDLTexture(std::string tID, SDL_Renderer* renderer, std::string path, int width, int height);
     ~SDLTexture();
+
+    void free();
 
     bool loadFromPNG(SDL_Renderer* renderer, std::string path);
 
@@ -28,6 +30,7 @@ private:
 
     int width;
     int height;
+    std::string tID;
 };
 
 #endif
